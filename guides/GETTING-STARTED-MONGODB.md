@@ -55,8 +55,7 @@ Por ejemplo, en MacOS si instalaste con `homebrew`, puede usar
 `mongod --config /usr/local/etc/mongod.conf --fork`. En Windows, hay que
 levantarlo desde Services console.
 
-Revisa [la guía de instalación de
-](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/#run-mongodb-community-edition),
+Revisa [la guía de instalación en MacOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/#run-mongodb-community-edition),
 [guía de instalación de Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/#run-mongodb-community-edition-as-a-windows-service),
 o tu instalación en particular, para ejemplos en cómo levantarlo.
 
