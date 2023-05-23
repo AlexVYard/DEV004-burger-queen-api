@@ -422,9 +422,9 @@ entregada por nuestra clienta, la API debe exponer los siguientes endpoints:
 
 * `GET /`
 
-#### 5.1.2 `/auth`
+#### 5.1.2 `/login`
 
-* `POST /auth`
+* `POST /login`
 
 #### 5.1.3 `/users`
 
