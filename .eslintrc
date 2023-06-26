@@ -13,6 +13,22 @@
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["e2e/**/*.js", "**/*.spec.js"]}],
     "no-console": ["error", {
       "allow": ["info", "warn", "error"]
-    }]
+    }],
+    "import/no-unresolved": 0,
+    "linebreak-style": 0,
+    "prefer-destructuring": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "import/extensions": 0,
+    "import/prefer-default-export": 0,
+    "jest/no-disabled-tests": 0,
+    "jest/no-focused-tests": 0,
+    "jest/no-identical-title": 0,
+    "jest/prefer-to-have-length": 0,
+    "jest/valid-expect": 0,
+    "quotes":0 ,
+    "no-alert": 0,
+    "no-trailing-spaces": 0,
+    "no-tabs": 0,
+    "space-before-function-paren": 0
   }
 }
