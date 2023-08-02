@@ -11,9 +11,7 @@
     "consistent-return": "off",
     "no-shadow": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["e2e/**/*.js", "**/*.spec.js"]}],
-    "no-console": ["error", {
-      "allow": ["info", "warn", "error"]
-    }],
+    "no-console": 0,
     "import/no-unresolved": 0,
     "linebreak-style": 0,
     "prefer-destructuring": 0,
@@ -29,6 +27,7 @@
     "no-alert": 0,
     "no-trailing-spaces": 0,
     "no-tabs": 0,
-    "space-before-function-paren": 0
+    "space-before-function-paren": 0,
+    "semi":0
   }
 }
