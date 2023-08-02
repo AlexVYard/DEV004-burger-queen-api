@@ -1,22 +1,35 @@
-const { MongoClient } = require("mongodb");
-// Replace the uri string with your connection string.
-const config = require("./config")
+const express = require('express');
+const config = require('./config');
+const authMiddleware = require('./middleware/auth');
+// const errorHandler = require('./middleware/error');
+// const routes = require('./routes');
+// const pkg = require('./package.json');
 
-const uri = config.dbUrl
-const client = new MongoClient(uri)
+const { port, secret } = config;
+const app = express();
 
-async function run() {
-  try {
-    const database = client.db()
-    /* const movies = database.collection('movies');
-    // Query for a movie that has the title 'Back to the Future'
-    const query = { title: 'Back to the Future' };
-    const movie = await movies.findOne(query); */
-    console.log(database)
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close()
+app.set('config', config);
+// app.set('pkg', pkg);
+
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(authMiddleware(secret));
+
+// Registrar rutas
+/* routes(app, (err) => {
+  if (err) {
+    throw err;
   }
-}
 
-run().catch(console.dir)
+  app.use(errorHandler);
+
+  app.listen(port, () => {
+    console.info(`App listening on port ${port}`);
+  });
+}); */
+
+// Agregado para probar index.js
+app.listen(port, () => {
+  console.info(`App listening on port ${port}`);
+});
