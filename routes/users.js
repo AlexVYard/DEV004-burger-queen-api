@@ -1,4 +1,6 @@
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
+// const express = require('express');
+const { connect } = require('../connect')
 
 const {
   requireAuth,
@@ -9,19 +11,36 @@ const {
   getUsers,
 } = require('../controller/users');
 
-const initAdminUser = (app, next) => {
+// const router = express.Router()
+// let database = ""
+
+const initAdminUser = async (app, next) => {
   const { adminEmail, adminPassword } = app.get('config');
   if (!adminEmail || !adminPassword) {
     return next();
   }
-
+  
   const adminUser = {
     email: adminEmail,
-    password: bcrypt.hashSync(adminPassword, 10),
+    // password: bcrypt.hashSync(adminPassword, 10),
+    password: adminPassword,
     roles: { admin: true },
   };
 
+  // console.info(adminUser)
+
+  // database = await connect()
+  // console.info(database)
+  
   // TODO: crear usuaria admin
+  /* router.post("/users", (req, res) => {
+    const user = adminUser(req.body)
+    
+    user
+      .save()
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }))
+  }) */
   // Primero ver si ya existe adminUser en base de datos
   // si no existe, hay que guardarlo
 
@@ -120,6 +139,13 @@ module.exports = (app, next) => {
   app.post('/users', requireAdmin, (req, resp, next) => {
     // TODO: implementar la ruta para agregar
     // nuevos usuarios
+    // console.info("new")
+    /* const user = adminUser(req.body)
+    
+    user
+      .save()
+      .then((data) => resp.json(data))
+      .catch((error) => resp.json({ message: error })) */
   });
 
   /**
