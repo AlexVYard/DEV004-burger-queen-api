@@ -9,7 +9,7 @@ async function connect() {
   // TODO: Conexión a la Base de Datos
   MongoClient.connect(dbUrl)
     .then((client) => {
-      const database = client.db("burger_queen")
+      const database = client.db('burger_queen)')
       const usersCollection = database.collection('users')
 
       console.log("Connected to database")

@@ -3,6 +3,11 @@ const jwt = require('jsonwebtoken');
 module.exports = (secret) => (req, resp, next) => {
   const { authorization } = req.headers;
 
+  // console.log("req.body", req.body)
+  // console.log("resp", resp)
+  console.log("authorization:", authorization)
+
+  // si no hay autorizacion
   if (!authorization) {
     return next();
   }

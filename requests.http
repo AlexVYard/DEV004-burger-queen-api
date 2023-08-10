@@ -1,7 +1,13 @@
-POST  http://localhost:8080/users HTTP/1.1
+POST  http://localhost:8080/auth HTTP/1.1
 Content-Type: application/json
 
 {
   "email": "admin@localhost",
   "password": "changeme"
 }
+
+###
+
+GET http://localhost:8080/users HTTP/1.1
+content-type: application/json
+authorization: 'esta-es-la-api-burger-queen'

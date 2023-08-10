@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config');
+const users = require('./users');
 
 const { secret } = config;
 
@@ -23,6 +24,31 @@ module.exports = (app, nextMain) => {
     if (!email || !password) {
       return next(400);
     }
+    
+    /* if (email === config.adminEmail && password === config.adminPassword) {
+      console.log("correo y contraseña coinciden con config")
+    } */
+
+    // console.log("resp.token", resp.token)
+    // console.log("email", email)
+    // console.log("password", password)
+
+    // tratando de acceder a la base de datos
+    /* app.get('/users', (req, res) => {
+      users.find({})
+        .toArray()
+        .then((results) => {          
+          res.status(200).json({
+            succes: true,
+            data: results,
+          })          
+        })
+        .catch((err) => {
+          res.status(500).json({
+            success: false,
+          })
+        })
+    }) */
 
     // TODO: autenticar a la usuarix
     // Hay que confirmar si el email y password

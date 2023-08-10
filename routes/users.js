@@ -1,6 +1,4 @@
 // const bcrypt = require('bcrypt');
-// const express = require('express');
-const { connect } = require('../connect')
 
 const {
   requireAuth,
