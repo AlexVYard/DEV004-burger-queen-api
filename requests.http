@@ -10,4 +10,4 @@ Content-Type: application/json
 
 GET http://localhost:8080/users HTTP/1.1
 content-type: application/json
-authorization: 'esta-es-la-api-burger-queen'
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFsZXhhIFZlZ2EiLCJpYXQiOjE1MTYyMzkwMjJ9.vtxBvIP8Yyg-9gDI7SnPGGYhmW1PLOijKQ0NDtMP9Y8
